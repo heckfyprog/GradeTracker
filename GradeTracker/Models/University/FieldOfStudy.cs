@@ -1,13 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace GradeTracker.Models
+namespace GradeTracker.Models.University
 {
     internal class FieldOfStudy
     {
-        public string FieldOfStudyName { get; set; }
+        [Key]
+        public int Id { get; set; }
+
+        public string Name { get; set; }
+
+        public List<AcademicYear> AcademicYears { get; set; } = new List<AcademicYear>();
+        public List<Semester> Semesters { get; set; } = new List<Semester>();
+
     }
 }
