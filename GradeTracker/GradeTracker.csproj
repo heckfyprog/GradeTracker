@@ -64,10 +64,7 @@
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.1" />
         <PackageReference Include="NuGet.Frameworks" Version="6.14.0" />
         <PackageReference Include="SQLite" Version="3.13.0" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Data\" />
+        <PackageReference Include="sqlite-net-pcl" Version="1.9.172" />
     </ItemGroup>
 
 </Project>

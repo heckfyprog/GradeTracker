@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using GradeTracker.Data;
+using Microsoft.Extensions.Logging;
 
 namespace GradeTracker
 {
@@ -16,8 +17,14 @@ namespace GradeTracker
 
             builder.Services.AddMauiBlazorWebView();
 
+            builder.Services.AddSingleton<DatabaseService>(s =>
+            {
+                string dbPath = Path.Combine(FileSystem.AppDataDirectory, "gradetracker.db3");
+                return new DatabaseService(dbPath);
+            });
+
 #if DEBUG
-    		builder.Services.AddBlazorWebViewDeveloperTools();
+            builder.Services.AddBlazorWebViewDeveloperTools();
     		builder.Logging.AddDebug();
 #endif
 
